@@ -17,8 +17,8 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 //routes
-
 app.use(playerRoutes);
 
-app.listen(process.env.PORT);
-console.log("server on port", process.env.PORT);
+app.listen(process.env.PORT || 4000, () => {
+  console.log(`server on port ${process.env.PORT}`);
+});
